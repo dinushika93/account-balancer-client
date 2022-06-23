@@ -1,0 +1,34 @@
+<div class="balance-details-main">
+  <h2>Balances as of {{month}} {{year}}</h2>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="rdBalance">
+      <th mat-header-cell *matHeaderCellDef> R&D </th>
+      <td mat-cell *matCellDef="let element">{{element.rdBalance}}</td>
+
+    </ng-container>
+
+
+    <ng-container matColumnDef="canteenBalance">
+      <th mat-header-cell *matHeaderCellDef> Canteen </th>
+      <td mat-cell *matCellDef="let element"> {{element.canteenBalance}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="carBalance">
+      <th mat-header-cell *matHeaderCellDef>CEO’s car</th>
+      <td mat-cell *matCellDef="let element"> {{element.carBalance}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="marketingBalance">
+      <th mat-header-cell *matHeaderCellDef>Marketing</th>
+      <td mat-cell *matCellDef="let element"> {{element.marketingBalance}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="parkingFinesBalance">
+      <th mat-header-cell *matHeaderCellDef>Parkings fines</th>
+      <td mat-cell *matCellDef="let element"> {{element.parkingFinesBalance}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

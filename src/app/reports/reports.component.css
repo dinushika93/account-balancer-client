@@ -1,0 +1,20 @@
+.reports-main {
+    margin-left: 100px;
+}
+
+.reports-container .mat-form-field + .mat-form-field {
+    margin-left: 30px;
+  }
+  
+  .reports-container .mat-form-field {
+    width: 300px;
+
+  }
+  
+  .reports-container form {
+    margin-bottom: 20px;
+  }
+  
+  .reports-container form > * {
+    margin: 5px 0;
+  }

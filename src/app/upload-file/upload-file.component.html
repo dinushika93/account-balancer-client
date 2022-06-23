@@ -1,0 +1,43 @@
+<div [formGroup]="upload_form" class="upload-form">
+    <div class="col-md-12">
+        <h2>Upload Sheet</h2>
+
+        <div class="form-group row form-element">
+            <mat-form-field>
+                <input matInput placeholder="Year" [(ngModel)]="year" formControlName="year" id="year" required>
+                <mat-error *ngIf="hasError('year', 'required')">Year is required</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group row  form-element">
+            <mat-form-field appearance="fill">
+                <mat-label>Month</mat-label>
+                <mat-select [(value)]="month" formControlName="month" id="month" required>
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let item of monthList" value="{{item.Value}}">{{item.Text}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('month', 'required')">Month is required</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group row  form-element">
+            <input type="file" class="file-input" (change)="onFileSelected($event)" accept=".xls,.xlsx" #fileUpload
+                style="display:none;">
+
+            <div class="file-upload">
+                {{fileName || "No file uploaded yet."}}
+
+                <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+                    <mat-icon>attach_file</mat-icon>
+                </button>
+
+            </div>
+        </div>
+        <span [ngClass]="{'uplod-success': uploadSuccessful, 'upload-error' : !uploadSuccessful }">
+            {{message}}
+        </span>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="upload()" [disabled]="!upload_form.valid">Upload</button>
+        </div>
+    </div>
+</div>
