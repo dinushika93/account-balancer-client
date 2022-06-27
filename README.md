@@ -1,6 +1,6 @@
 # AccountBalancerClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+This application demonstrates a set of functionalities that can be consumed via account-balancer server.This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1
 
 ## Development server
 
